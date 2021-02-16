@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="columns is-centered">
+    <div class="column">
+        <a href="{% url 'roles:lista' %}">
+            <div class="box">
+                Roles
+            </div>
+        </a>
+    </div>
+    <div class="column">
+        <a href="{% url 'empleados:lista' %}">
+            <div class="box">
+                Empleados
+            </div>
+        </a>
+    </div>
+    <div class="column">
+        <a href="{% url 'grados:lista' %}">
+            <div class="box">
+                Grados
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock contenido %}

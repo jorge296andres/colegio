@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="columns is-centered">
+    <div class="column is-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label">Jornada</label>
+                <div class="control select">
+                  {{ form.jornada }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Roles</label>
+                <div class="control select">
+                  {{ form.roles }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Nombre Completo</label>
+                <div class="control">
+                  {{ form.nombre_completo }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Edad</label>
+                <div class="control">
+                  {{ form.edad }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Cedula</label>
+                <div class="control">
+                  {{ form.cedula }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  {{ form.email }}
+                </div>
+            </div>
+            <button type="submit" class="button is-success">Crear</button>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}

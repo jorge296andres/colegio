@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="columns is-centered">
+    <div class="column is-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label">Jornada</label>
+                <div class="control select">
+                  {{ form.jornada }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Empleado</label>
+                <div class="control select">
+                  {{ form.empleados }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Grado</label>
+                <div class="control">
+                  {{ form.nombre_grado }}
+                </div>
+            </div>
+            <button type="submit" class="button is-success">Actualizar</button>
+            <div class="mt-4">
+              {% for field in form %}
+                {% if field.errors %}<p class="tag is-danger">{{ field.errors|striptags }}</p>{% endif %}
+              {% endfor %}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}

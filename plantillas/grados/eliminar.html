@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="columns is-centered">
+    <div class="column is-4">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Seguro que quieres eliminar {{ object.grado }}?</h1>
+            <button type="submit" class="button is-danger">Eliminar</button>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}

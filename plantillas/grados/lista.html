@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<a href="{% url 'grados:crear' %}" class="button is-large is-success margin-bottom mb-4">Crear Grado</a>
+<div class="columns is-multiline">
+    {% for grado in grados %}
+    <div class="column is-3">
+        <div class="box">
+            <h2 class="subtitle">{{ grado.nombre_grado }}</h2>
+            <div class="columns">
+                <div class="column">
+                    <span class="tag is-dark">Titular: {{ grado.empleados.nombre_completo }}</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'grados:editar' grado.id %}" class="button is-info">Editar</a>
+                <a href="{% url 'grados:eliminar' grado.id %}" class="button is-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+        <h1>Sin grados registrados.</h1>
+    {% endfor %}
+</div>
+{% endblock contenido %}

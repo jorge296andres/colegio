@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="columns is-centered">
+    <div class="column is-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label">Rol</label>
+                <div class="control">
+                  {{ form.rol }}
+                </div>
+              </div>
+              <button type="submit" class="button is-success">Actualizar</button>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}
